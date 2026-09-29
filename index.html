@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacob Henry Haarberg | Electrical Engineering Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Real-time Oscilloscope Background Trace Engine -->
+    <canvas id="scopeCanvas"></canvas>
+    
+    <div class="container">
+        <!-- HEADER / SILKSCREEN FABRIC-BLOCK REGISTRATION -->
+        <header class="terminal-header">
+            <h1>JACOB HENRY HAARBERG</h1>
+            <p class="subtitle">> B.S. Electrical Engineering // WSU Vancouver // Radio Sign: KM7FWX</p>
+            <div class="cv-links">
+                <!-- Point these to where your physical PDFs are stored in your root directory -->
+                <a href="resume.pdf" class="btn" download>💾 Download Resume.pdf</a>
+                <a href="https://linkedin.com" target="_blank" class="btn">🌐 LinkedIn Profile</a>
+                <a href="mailto:Jacob.Haarberg@outlook.com" class="btn">✉️ Contact Engineer</a>
+            </div>
+        </header>
+
+        <!-- EDUCATION MATRIX -->
+        <section class="skills-section">
+            <h2>0x01 // ACADEMIC_SUBSTRATE</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>WSU Vancouver</h3>
+                    <p><strong>B.S. Electrical Engineering</strong></p>
+                    <p class="status-tag">Expected May 2028</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px;">Junior Standing. Active coursework in Electronic Devices & Applications (ECE 325) and Solid State Devices (ECE 349).</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Clark College</h3>
+                    <p><strong>A.S. Electrical Engineering</strong></p>
+                    <p class="status-tag">Completed With Honors</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px;">GPA: 3.6/4.0 (3.9 institutional). Vice President's List across all quarters.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS MATRIX -->
+        <section class="skills-section">
+            <h2>0x02 // TECHNICAL_HARDWARE_STACK</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Hardware & EDA</h3>
+                    <ul>
+                        <li>THT / SMD Soldering</li>
+                        <li>Breadboards & Turret Boards</li>
+                        <li>KiCad Layout Design</li>
+                        <li>RF Layout Concepts</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Firmware & Analysis</h3>
+                    <ul>
+                        <li>C / C++ Development</li>
+                        <li>PIC18 RISC Assembly</li>
+                        <li>LTspice & Simulation</li>
+                        <li>MATLAB / Octave Modeling</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Bench Instrumentation</h3>
+                    <ul>
+                        <li>Oscilloscopes / Logic Analyzers</li>
+                        <li>Vector Network Analyzers (VNA)</li>
+                        <li>Function Gen & LCR/ESR Meters</li>
+                        <li>DC/AC Isolated Power Supplies</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- HARDWARE PROJECTS GALLERY -->
+        <section class="projects-section">
+            <h2>0x03 // HARDWARE_FABRICATION_LOG</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1: Tube Amp -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3>50W High-Voltage Tube Amplifier</h3>
+                        <span class="status-tag">Analog Hardware</span>
+                    </div>
+                    <p class="project-desc">End-to-end analog hardware layout built from hand-drafted turret boards. Engineered a linear power supply with 6 independent rails (6.3VAC, 270-420VDC, and negative voltage doubler bias tracking).</p>
+                    <p style="font-size:0.8rem; color:var(--text-muted);">Tech: LTspice, Fixed Biasing, Ground Loop Elimination, Impedance Matching</p>
+                    <div class="project-links">
+                        <button class="btn-sm modal-trigger" data-target="amp-modal">View Architecture Specs</button>
+                    </div>
+                </article>
+
+                <!-- Project 2: People Counter -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3>Bidirectional People Counter</h3>
+                        <span class="status-tag">Microcontroller / Embedded</span>
+                    </div>
+                    <p class="project-desc">Programmed a robust, multistage software state machine running on an Arduino core to compute ultrasonic data vectors and log bidirectional occupancy counts dynamically in real time.</p>
+                    <p style="font-size:0.8rem; color:var(--text-muted);">Tech: C++, State Machines, 3D Printing, Addressable RGB Driver Logic</p>
+                    <div class="project-links">
+                        <button class="btn-sm modal-trigger" data-target="counter-modal">View Display Blueprint</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+        
+        <!-- RADIO CERTIFICATIONS & WORK LEADERSHIP -->
+        <section class="skills-section">
+            <h2>0x04 // OPERATIONAL_SYSTEMS_LOG</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Radio Licensing</h3>
+                    <p><strong>FCC General Class Amateur License</strong></p>
+                    <p style="font-size:0.9rem; color:var(--solder-gold);">Call Sign: KM7FWX</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Systems Leadership</h3>
+                    <p><strong>Aquatics Staff Supervisor</strong></p>
+                    <p style="font-size:0.85rem;">Manages incident metrics, regulatory reports, and executes chemical titration operations to control safety baselines.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MODAL POPUPS (TRIGGERS TO SHOW SCHEMATICS OR PHOTOS) -->
+    <div id="amp-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>50W High-Voltage Tube Amp — LTspice & Assembly Specs</h2>
+            <div class="blueprint-placeholder">
+                <!-- Drop a PNG schematic image inside your assets folder, then point to it here: -->
+                <!-- <img src="assets/schematics/tube_amp.png" alt="Tube Amp Schematic Layout" style="width:100%; max-height:100%; object-fit:contain;"> -->
+                <p>[ Drop your LTspice Schematic Export or Turret Layout Image here: assets/schematics/ ]</p>
+            </div>
+            <ul style="font-size: 0.85rem; margin-top: 15px; color: var(--text-primary);">
+                <li>Designed 5-stage analog signal paths (pre-amp, tone stack, pre-driver, phase inverter, power stage).</li>
+                <li>Mitigated cross-coupling loops through precise power transformer orientation modeling.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="counter-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>3D Printed RGB 7-Segment Display Module</h2>
+            <div class="blueprint-placeholder">
+                <!-- Drop a photo of your custom display block here: -->
+                <!-- <img src="assets/schematics/counter.jpg" alt="7-Segment Enclosure Mock" style="width:100%; max-height:100%; object-fit:contain;"> -->
+                <p>[ Drop your 3D Render CAD / Enclosure wiring diagram here: assets/schematics/ ]</p>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 15px; color: var(--text-primary);">
+                Custom 2-digit enclosure utilizing individual addressable LED strip segments written with local logic blocks to compute overflow warning flags.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

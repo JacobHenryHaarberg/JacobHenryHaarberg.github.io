@@ -1,0 +1,215 @@
+:root {
+    --bg-color: #0b0c10;          /* Deep matte obsidian black */
+    --pcb-grid: #12131a;          /* Background substrate grid line */
+    --copper-orange: #ff7700;     /* Vibrant trace copper orange */
+    --solder-gold: #ffaa00;       /* Component pads and highlights */
+    --text-primary: #e2e8f0;      /* Clean, readable technical white */
+    --text-muted: #718096;        /* Subdued text for structural notes */
+    --border-trace: #242933;      /* Dark trace lines */
+}
+
+body {
+    background-color: var(--bg-color);
+    /* PCB Substrate grid pattern */
+    background-image: 
+        linear-gradient(var(--pcb-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--pcb-grid) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--text-primary);
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Removes the old fuzzy CRT line overlay completely */
+.crt-overlay {
+    display: none;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header styled like a manufacturing fabrication block */
+header.terminal-header {
+    border: 2px solid var(--copper-orange);
+    border-left: 8px solid var(--copper-orange); /* Thick trace anchor */
+    padding: 25px;
+    background: rgba(11, 12, 16, 0.9);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Small aesthetic designators mimicking silkscreen markings */
+header.terminal-header::before {
+    content: "LAYER_01_TOP_COPPER // REV_2026.4";
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background: var(--bg-color);
+    color: var(--solder-gold);
+    font-size: 0.75rem;
+    padding: 0 5px;
+}
+
+h1 { 
+    color: var(--copper-orange); 
+    margin: 0 0 10px 0; 
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h2 { 
+    color: var(--solder-gold); 
+    border-bottom: 2px solid var(--border-trace); 
+    padding-bottom: 8px;
+    font-size: 1.3rem;
+    margin-top: 40px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin: 0 0 20px 0;
+}
+
+/* Technical Copper Interface Buttons */
+.btn, .btn-sm {
+    background: transparent;
+    color: var(--copper-orange);
+    border: 1px solid var(--copper-orange);
+    padding: 10px 18px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 12px;
+    margin-top: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover, .btn-sm:hover {
+    background: rgba(255, 119, 0, 0.1);
+    color: var(--solder-gold);
+    border-color: var(--solder-gold);
+    box-shadow: 0 0 8px rgba(255, 170, 0, 0.3);
+}
+
+.btn-sm { 
+    padding: 6px 12px; 
+    font-size: 0.8rem; 
+}
+
+/* Grid Layouts for Content Matrix */
+.skills-grid, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Cards styled to look like mounted silicon components */
+.skill-card, .project-card {
+    border: 1px solid var(--border-trace);
+    border-top: 3px solid var(--copper-orange); /* Solder mask link */
+    padding: 22px;
+    background: #11141a;
+    position: relative;
+}
+
+.skill-card h3, .project-card h3 {
+    color: var(--copper-orange);
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.skill-card ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.skill-card li {
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.project-desc {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Component status tags resembling silkscreen test point indicators */
+.status-tag {
+    font-size: 0.7rem;
+    background: transparent;
+    padding: 2px 6px;
+    border: 1px dashed var(--solder-gold);
+    color: var(--solder-gold);
+}
+
+/* Modal Popups for Schematics/Blueprints */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    margin: 8% auto;
+    padding: 25px;
+    width: 85%;
+    max-width: 850px;
+    border: 2px solid var(--copper-orange);
+    box-shadow: 0 0 20px rgba(255, 119, 0, 0.2);
+}
+
+.close-btn {
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--copper-orange);
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--solder-gold);
+}
+
+/* Blueprint viewer module inside the popup window */
+.blueprint-placeholder {
+    border: 1px solid var(--border-trace);
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #06090e; 
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+/* Oscilloscope Background Canvas Layer */
+#scopeCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;          /* Locks it strictly behind your text and cards */
+    pointer-events: none; /* Allows you to still click buttons right through it */
+    opacity: 0.15;        /* Subdued baseline brightness so your text stays highly readable */
+}
