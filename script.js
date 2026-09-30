@@ -120,5 +120,3 @@ function drawScope() {
 
 // Start tracking the waveform sweep loop
 drawScope();
-eep loop
-drawScope();
