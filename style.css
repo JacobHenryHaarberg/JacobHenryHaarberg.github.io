@@ -164,28 +164,36 @@ h2 {
 .modal {
     display: none;
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.9);
     z-index: 1000;
 }
 
 .modal-content {
     background: var(--bg-color);
-    margin: 8% auto;
+    position: relative;
+    margin: 4vh auto;          /* small gap top and bottom */
     padding: 25px;
     width: 85%;
     max-width: 850px;
+    max-height: 90vh;          /* never taller than the screen */
+    overflow-y: auto;          /* scrolls inside the box */
+    box-sizing: border-box;
     border: 2px solid var(--copper-orange);
     box-shadow: 0 0 20px rgba(255, 119, 0, 0.2);
 }
 
 .close-btn {
+    position: sticky;
+    top: 0;
     float: right;
     font-size: 2rem;
     cursor: pointer;
     color: var(--copper-orange);
     line-height: 1;
-}
+    z-index: 10;
+} 
 
 .close-btn:hover {
     color: var(--solder-gold);
@@ -212,4 +220,122 @@ h2 {
     z-index: -1;          /* Locks it strictly behind your text and cards */
     pointer-events: none; /* Allows you to still click buttons right through it */
     opacity: 0.15;        /* Subdued baseline brightness so your text stays highly readable */
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gallery figure {
+    margin: 0;
+    border: 1px solid var(--border-trace);
+    background: #06090e;
+    padding: 10px;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    cursor: zoom-in;
+}
+
+.gallery figcaption {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-trace);
+    font-size: 0.85rem;
+    color: var(--text-primary);
+}
+
+.gallery figcaption::before {
+    content: "> ";
+    color: var(--copper-orange);
+}
+
+/* Prominent "View" buttons */
+.btn-sm {
+    background: var(--copper-orange);
+    color: #0b0c10;                 /* dark text on orange for contrast */
+    border: 2px solid var(--solder-gold);
+    padding: 12px 22px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #a34d00,    /* solid "3D" edge */
+                0 0 14px rgba(255, 119, 0, 0.4);  /* glow */
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+}
+
+.btn-sm::after {
+    content: "  ▶";
+}
+
+.btn-sm:hover {
+    background: var(--solder-gold);
+    color: #0b0c10;
+    border-color: var(--solder-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #a34d00,
+                0 0 22px rgba(255, 170, 0, 0.6);
+}
+
+.btn-sm:active {
+    transform: translateY(4px);     /* pushes down like a real button */
+    box-shadow: 0 0 0 #a34d00,
+                0 0 10px rgba(255, 119, 0, 0.4);
+}
+
+.btn-sm:focus-visible {
+    outline: 3px solid var(--text-primary);
+    outline-offset: 3px;
+}
+
+/* Prominent header buttons (Resume, LinkedIn, Email) */
+.cv-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.cv-links .btn {
+    background: var(--copper-orange);
+    color: #0b0c10;
+    border: 2px solid var(--solder-gold);
+    padding: 14px 26px;
+    margin: 0;                       /* gap handles spacing now */
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 4px 0 #a34d00,
+                0 0 14px rgba(255, 119, 0, 0.4);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+}
+
+.cv-links .btn:hover {
+    background: var(--solder-gold);
+    color: #0b0c10;
+    border-color: var(--solder-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #a34d00,
+                0 0 22px rgba(255, 170, 0, 0.6);
+}
+
+.cv-links .btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #a34d00,
+                0 0 10px rgba(255, 119, 0, 0.4);
+}
+
+.cv-links .btn:focus-visible {
+    outline: 3px solid var(--text-primary);
+    outline-offset: 3px;
 }
