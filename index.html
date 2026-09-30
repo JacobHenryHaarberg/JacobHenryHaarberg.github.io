@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Real-time Oscilloscope Background Trace Engine -->
-    <canvas id="scopeCanvas"></canvas>
-    
+
+
+
     <div class="container">
         <!-- HEADER / SILKSCREEN FABRIC-BLOCK REGISTRATION -->
         <header class="terminal-header">
@@ -21,7 +21,42 @@
                 <a href="https://www.linkedin.com/in/jacob-henry-haarberg-58b234398/" target="_blank" class="btn">🌐 LinkedIn Profile</a>
                 <a href="mailto:Jacob.Haarberg@outlook.com" class="btn">✉️ Contact Me Via Email!</a>
             </div>
+
         </header>
+
+
+
+    <!-- Real-time Oscilloscope Background Trace Engine -->
+    <canvas id="scopeCanvas"></canvas>
+    
+
+
+<!-- Introduction/info page -->
+<section class="skills-section">
+    <h2>0x00 // INFO_CONCEPT</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3>About This Site</h3>
+            <p style="font-size: 0.85rem; margin-top: 10px;">
+                Hi, I'm Jacob, an electrical engineering student at WSU Vancouver
+                (B.S. expected May 2028). This site is where I document what I build,
+                including the mistakes, so the projects don't just end up in a drawer.
+                <br><br>
+                My interests lean toward circuits, analog design, Radio, real hardware, amplifiers,
+                embedded systems, ect.<br>
+                You should find schematics, simulations, build
+                photos, and more
+                <br><br>
+                I'm currently looking for internship and entry-level opportunities in
+                electrical engineering. If you're hiring, or just want to talk
+                circuits or radio, reach out using the buttons above.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
         <!-- HARDWARE PROJECTS GALLERY -->
         <section class="projects-section">
             <h2>0x01 // HARDWARE_FABRICATION_LOG</h2>
@@ -33,10 +68,13 @@
                         <h3>50W High-Voltage Tube Amplifier</h3>
                         <span class="status-tag">Analog Hardware</span>
                     </div>
-                    <p class="project-desc">End-to-end analog hardware layout built from hand-drafted turret boards. Engineered a linear power supply with 6 independent rails (6.3VAC, 270-420VDC, and negative voltage doubler bias tracking).</p>
+                    <p class="project-desc">For this project, I designed and built a 50W tube amplifier including the High-Voltage Power Supply, low noise preamp, phase invertsion, and A/B Power output stage. I ended up spending a really conciderable amount of time on this project. 
+                    <br>I couldnt have done any of this without these reasources: 
+                    <br> <br><strong>Valve Amplifiers by Morgan Jones;</strong> taught me everything about tube amplifier analysis and operation. I cant understate how much this textbook helped me out with this project.
+                    <br> <br><strong>Uncle Doug on youtube;</strong> has amazing lectures and information videos all things tube amplifiers.  </p>
                     <p style="font-size:0.8rem; color:var(--text-muted);">Tech: LTspice, Fixed Biasing, Ground Loop Elimination, Impedance Matching</p>
                     <div class="project-links">
-                        <button class="btn-sm modal-trigger" data-target="amp-modal">View Architecture Specs</button>
+                        <button class="btn-sm modal-trigger" data-target="amp-modal">View Build/Schematic Photos & info</button>
                     </div>
                 </article>
 
@@ -48,14 +86,13 @@
                     </div>
                     <p class="project-desc">Programmed a robust, multistage software state machine running on an Arduino core to compute ultrasonic data vectors and log bidirectional occupancy counts dynamically in real time.</p>
                     <p style="font-size:0.8rem; color:var(--text-muted);">Tech: C++, State Machines, 3D Printing, Addressable RGB Driver Logic</p>
-                    <div class="project-links">
-                        <button class="btn-sm modal-trigger" data-target="counter-modal">View Display Blueprint</button>
-                    </div>
                 </article>
 
             </div>
         </section>
         
+
+
         <!-- EDUCATION MATRIX -->
         <section class="skills-section">
             <h2>0x02 // ACADEMIC_SUBSTRATE</h2>
@@ -76,35 +113,49 @@
                     <p><strong>A.S. Electrical Engineering</strong></p>
                     <p class="status-tag">Completed With Honors</p>
                     <p style="font-size: 0.85rem; margin-top: 10px;">Vice President's List all quarters of EE.</p>
-                    <p style="font-size: 0.85rem; margin-top: 10px;">Deciple of the Phyzard, Gothard the grey.</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px;">Diciple of the Phyzard, Gothard the grey.</p>
                 </div>
             </div>
         </section>
 
-        <!-- HAM Radio Traces -->
-        <section class="skills-section">
-            <h2>0x03 // HAM_RADIO_TRACES</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>WSU Vancouver</h3>
-                    <p><strong>B.S. Electrical Engineering</strong></p>
-                    <p class="status-tag">Expected May 2028</p>
-                    <p style="font-size: 0.85rem; margin-top: 10px;">Junior Standing. Active coursework in <br>
-                        Electronic Devices & Applications (ECE 325). <br>
-                        Solid State Devices (ECE 349). <br>
-                        Probability and Statistics (STAT 360).<br>
-                        Technical and Professional Writing (ENGL 402).<br>
-                        </p>
-                </div>
-                <div class="skill-card">
-                    <h3>Clark College</h3>
-                    <p><strong>A.S. Electrical Engineering</strong></p>
-                    <p class="status-tag">Completed With Honors</p>
-                    <p style="font-size: 0.85rem; margin-top: 10px;">Vice President's List all quarters of EE.</p>
-                    <p style="font-size: 0.85rem; margin-top: 10px;">Deciple of the Phyzard, Gothard the grey.</p>
-                </div>
-            </div>
-        </section>
+
+
+<!-- HAM Radio Traces -->
+<section class="skills-section">
+    <h2>0x03 // HAM_RADIO_TRACES</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3>Xiegu G90</h3>
+            <p><strong>HF Transceiver // Main Rig</strong></p>
+            <p style="font-size: 0.85rem; margin-top: 10px;">
+                20W HF SDR transceiver with a built-in auto-tuner,
+                 best suited for experiementing with new antennas and propagations modes.
+                <br><br>possible 80M Mag loop antenna to come. . . . .    
+                </bk>
+            </p>
+        </div>
+        <div class="skill-card">
+            <h3>BaoFeng UV-5RM</h3>
+            <p><strong>VHF/UHF Handheld // Super inexpensive </strong></p>
+            <p style="font-size: 0.85rem; margin-top: 10px;">
+                Cheap, cheerful, and surprisingly capable.<br>
+                Perfect for local repeaters, simplex, and<br>
+                experimenting without breaking the bank.
+            </p>
+        </div>
+        <div class="skill-card">
+            <h3>Club Affiliation</h3>
+            <p><strong>W7AIA</strong></p>
+            <p style="font-size: 0.85rem; margin-top: 10px;">
+                <a href="https://www.w7aia.org/" target="_blank" rel="noopener noreferrer">www.w7aia.org</a>
+                They brought me into the hobby through their free local in-person classes for the tech liscense. 
+                If anybody in the Clark county area is interested in getting started with HAM radio, I highly recommend checking them out.
+            </p>
+        </div>
+    </div>
+</section>
+
+
 
         <!-- SKILLS MATRIX -->
         <section class="skills-section">
@@ -141,55 +192,27 @@
         </section>
 
 
-        <!-- RADIO CERTIFICATIONS & WORK LEADERSHIP -->
-        <section class="skills-section">
-            <h2>0x05 // OPERATIONAL_SYSTEMS_LOG</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Radio Licensing</h3>
-                    <p><strong>FCC General Class Amateur License</strong></p>
-                    <p style="font-size:0.9rem; color:var(--solder-gold);">Call Sign: KM7FWX</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Systems Leadership</h3>
-                    <p><strong>Aquatics Staff Supervisor</strong></p>
-                    <p style="font-size:0.85rem;">Manages incident metrics, regulatory reports, and executes chemical titration operations to control safety baselines.</p>
-                </div>
-            </div>
-        </section>
-    </div>
 
     <!-- MODAL POPUPS (TRIGGERS TO SHOW SCHEMATICS OR PHOTOS) -->
-    <div id="amp-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>50W High-Voltage Tube Amp — LTspice & Assembly Specs</h2>
-            <div class="blueprint-placeholder">
-                <!-- Drop a PNG schematic image inside your assets folder, then point to it here: -->
-                <!-- <img src="assets/schematics/tube_amp.png" alt="Tube Amp Schematic Layout" style="width:100%; max-height:100%; object-fit:contain;"> -->
-                <p>[ Drop your LTspice Schematic Export or Turret Layout Image here: assets/schematics/ ]</p>
-            </div>
-            <ul style="font-size: 0.85rem; margin-top: 15px; color: var(--text-primary);">
-                <li>Designed 5-stage analog signal paths (pre-amp, tone stack, pre-driver, phase inverter, power stage).</li>
-                <li>Mitigated cross-coupling loops through precise power transformer orientation modeling.</li>
-            </ul>
-        </div>
+<!-- AMP MODAL -->
+<div id="amp-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>50W High-Voltage Tube Amp — LTspice & Assembly Specs</h2>
+        <div class="gallery" data-gallery="amp"></div>
     </div>
+</div>
 
-    <div id="counter-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>3D Printed RGB 7-Segment Display Module</h2>
-            <div class="blueprint-placeholder">
-                <!-- Drop a photo of your custom display block here: -->
-                <!-- <img src="assets/schematics/counter.jpg" alt="7-Segment Enclosure Mock" style="width:100%; max-height:100%; object-fit:contain;"> -->
-                <p>[ Drop your 3D Render CAD / Enclosure wiring diagram here: assets/schematics/ ]</p>
-            </div>
-            <p style="font-size: 0.85rem; margin-top: 15px; color: var(--text-primary);">
-                Custom 2-digit enclosure utilizing individual addressable LED strip segments written with local logic blocks to compute overflow warning flags.
-            </p>
-        </div>
+<!-- COUNTER MODAL -->
+<div id="counter-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>3D Printed RGB 7-Segment Display Module</h2>
+        <div class="gallery" data-gallery=t-desc">Programmed a robust, multistage software state machine running on an Arduino core to compute ultrasonic data vectors and log bidirectional occupancy counts dynamically in real time.</p>
+                    <p style="font-size:0.8rem; color:var(--text-muted);">Tech: C++, State Machines, 3D Printing, Addressable RGB Driver Logic</p>
+                </article>"counter"></div>
     </div>
+</div>
 
     <script src="script.js"></script>
 </body>
