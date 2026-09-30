@@ -120,3 +120,23 @@ function drawScope() {
 
 // Start tracking the waveform sweep loop
 drawScope();
+
+window.addEventListener('load', () => {
+    const ampTrigger = document.querySelector('.modal-trigger[data-target="amp-modal"]');
+    console.log('amp trigger found:', ampTrigger, 'hash:', window.location.hash);
+
+    if (!ampTrigger) return;
+
+    // Links to #amp-modal open the popup
+    document.querySelectorAll('a[href="#amp-modal"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            ampTrigger.click();
+        });
+    });
+
+    // Opening the page with #amp-modal in the URL opens the popup
+    if (window.location.hash === '#amp-modal') {
+        setTimeout(() => ampTrigger.click(), 100);
+    }
+});
