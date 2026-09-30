@@ -6,6 +6,7 @@ const photoData = {
         { src: "Photos/Amp_Schematic.png", desc: "Handwriten schematic of the entire circuit." },
         { src: "Photos/Amp_Layout2-2.jpeg",  desc: "turret board layout and wiring Diagram for the amplifier." },
         { src: "Photos/Amp_Layout2-3.jpeg", desc: "turret board layout and wiring Diagram for the linear power supply." },
+        { src: "Photos/Spice_amp.png", desc: "SPICE simulation setup for the amplifier signal path." },
         
     ],
     counter: [
@@ -118,4 +119,6 @@ function drawScope() {
 }
 
 // Start tracking the waveform sweep loop
+drawScope();
+eep loop
 drawScope();
